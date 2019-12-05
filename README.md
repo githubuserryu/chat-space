@@ -26,52 +26,34 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true, dependent: true|
-|user|string|null: false, unique: true, foreign_key: true|
+|id|integer|null: false, foreign_key: true, dependent: true|
+|user_name|string|null: false, unique: true, foreign_key: true|
 |password|variant|null: false, unique: true, dependent: true|
 |mail|variant|null: false, unique: true, dependent: true|
 
 ### Association
-- belongs_to :groups
+- has_many :groups, through: :users_groups
 - belongs_to :messages
-- belongs_to :images
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true, dependent: true|
-|group|string|null: false, foreign_key: true, dependent: true|
-|user_id|integer|null: false, foreign_key: true, dependent: true|
-|image_id|integer|null: false, foreign_key: true, dependent: true|
+|id|integer|null: false, foreign_key: true, dependent: true|
+|group_name|string|null: false, foreign_key: true, dependent: true|
 |message_id|integer|null: false, foreign_key: true, dependent: true|
 ### Association
-- belongs_to :user
-- has_many :massage, through: :massages_groups
-- has_many :image, through: : images_groups
+- has_many :massages, through: :users_groups
+- belongs_to :messages
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|massage_id|integer|null: false, foreign_key: true|
+|id|integer|null: false, foreign_key: true|
+|time|date|null: false, dependent: true|
 |massage|string|null: false, dependent: true|
-|user_id|integer|null: false, foreign_key: true, dependent: true|
-|group_id|integer|null: false, foreign_key: true, dependent: true|
-|time|date|null: false, dependent: true|
-- belongs_to :user
-- has_many :group, through: :massages_groups
-
-## imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image_id|integer|null: false, foreign_key: true, dependent: true|
 |image|variant|dependent: true|
-|user_id|integer|null: false, foreign_key: true, dependent: true|
-|group_id|integer|null: false, foreign_key: true, dependent: true|
-|time|date|null: false, dependent: true|
-
-### Association
 - belongs_to :user
-- has_many :group, through: :images_groups
+- belongs_to :groups
 
 ## users_groupsテーブル
 |Column|Type|Options|
@@ -80,27 +62,5 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user
-- belongs_to :group
-
-
-
-## massages_groupsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|massage_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :massage
-- belongs_to :group
-
-## images_groupsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :image
-- belongs_to :group
+- belongs_to :users
+- belongs_to :groups

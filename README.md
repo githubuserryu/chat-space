@@ -27,11 +27,12 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true, dependent: true|
-|user_name|string|null: false, unique: true, foreign_key: true|
+|name|string|null: false, unique: true, foreign_key: true|
 |password|variant|null: false, unique: true, dependent: true|
 |mail|variant|null: false, unique: true, dependent: true|
 
 ### Association
+- has_many :users_groups
 - has_many :groups, through: :users_groups
 - belongs_to :messages
 
@@ -39,9 +40,10 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true, dependent: true|
-|group_name|string|null: false, foreign_key: true, dependent: true|
+|name|string|null: false, foreign_key: true, dependent: true|
 |message_id|integer|null: false, foreign_key: true, dependent: true|
 ### Association
+- has_many :users_groups
 - has_many :massages, through: :users_groups
 - belongs_to :messages
 
@@ -49,8 +51,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
-|time|date|null: false, dependent: true|
-|massage|string|null: false, dependent: true|
+|time|date|null: false|
+|massage|string|null: false|
 |image|variant|dependent: true|
 - belongs_to :user
 - belongs_to :groups

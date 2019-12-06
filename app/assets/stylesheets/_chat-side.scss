@@ -1,0 +1,62 @@
+.side-ber {
+  height: 100vh;
+  width: 300px;
+  float: left;
+  .side-ber__user-name{
+    height: 100px;
+    width: 300px;
+    background-color: #253141;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .top-items__name{
+      height: 20px;
+      width: 260px;
+      display: flex;
+      justify-content: flex-start;
+      .top-items{
+        height: 20px;
+        width: calc(260px - 60px);
+        line-height: center;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 16px;
+      }
+      .top-items__icon{
+        height: 20px;
+        width: 60px;
+        display: flex;
+        justify-content: flex-end;
+          .fa-edit{
+            color: #ffffff;
+          }
+          .fa-cog{
+            color: #ffffff;
+            margin-left: 5px;
+          }
+      }
+    }
+  }
+  .side-ber__group-list{
+    width: 300px;
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    .side-ber__group-list__item{
+      height: 100px;
+      width: 300px;
+      .side-ber__group-list__item__name{
+        font-size: 15px;
+        color: #ffffff;
+        padding-top: 20px;
+        margin-bottom: 5px;
+        margin-left: 20px;
+      }
+      .side-ber__group-list__item__last-message{
+        font-size: 11px;
+        color: #ffffff;
+        margin-left: 20px;
+      }
+    }
+  }
+}

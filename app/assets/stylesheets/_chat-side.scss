@@ -1,9 +1,9 @@
-$s:#ffffff;
+@import "./variables";
 .side-ber {
   height: 100vh;
   width: 300px;
   float: left;
-  .side-ber__user-name{
+  &__user-name{
     height: 100px;
     width: 300px;
     background-color: #253141;
@@ -19,7 +19,7 @@ $s:#ffffff;
       .top-items{
         height: 20px;
         width: 260px - 60px;
-        color: $s;
+        color: $main-color;
         font-size: 16px;
         line-height: center;
         font-weight: bold;
@@ -30,32 +30,32 @@ $s:#ffffff;
         display: flex;
         justify-content: flex-end;
           .fa-edit{
-            color: $s;
+            color: $main-color;
           }
           .fa-cog{
-            color: $s;
+            color: $main-color;
             margin-left: 5px;
           }
       }
     }
   }
-  .side-ber__group-list{
+  &__group-list{
     width: 300px;
     height: calc(100vh - 100px);
     background-color: #2f3e51;
-    .side-ber__group-list__item{
+    &__item{
       height: 100px;
       width: 300px;
-      .side-ber__group-list__item__name{
+      &__name{
         font-size: 15px;
-        color: $s;
+        color: $main-color;
         padding-top: 20px;
         margin-bottom: 5px;
         margin-left: 20px;
       }
-      .side-ber__group-list__item__last-message{
+      &__last-message{
         font-size: 11px;
-        color: $s;
+        color: $main-color;
         margin-left: 20px;
       }
     }

@@ -3,15 +3,14 @@ html,body{
   padding: 0;
   margin: 0;
 }
-$s:#ffffff;
 .chat-main{
   height: 100%;
   padding: 0;
   margin: 0;
-  .chat-main__group-info{
+  &__group-info{
     height: 100px;
     width: calc(100vw - 300px);
-    background-color: $s;
+    background-color: $main-color;
     float: right;
     display: flex;
     justify-content:space-between;
@@ -39,36 +38,38 @@ $s:#ffffff;
       padding-left: 20px;
       padding-right: 20px;
       line-height: 40px;
+      text-decoration: none;
     }
   }
-  .chat-main__message-list{
+  &__message-list{
     height: calc(100vh - 100px - 90px);
     width: calc(100vw - 300px);
     background-color: #fafafa;
     padding-left: 40px;
+    padding-top: 35px;
     float: right;
-    .chat-main__message-list__user{
+    &__user{
       display: flex;
       justify-content: flex-start;
       padding-bottom: 12px;
-      margin-top: 35px;
-      .chat-main__message-list__user__name{
+      font-weight: bold;
+      &__name{
         color: #333333;
         font-size: 16px;
       }
-      .chat-main__message-list__user__time{
+      &__time{
         color: #999999;
         font-size: 12px;
         margin-left: 5px;
       }
-
     }
-    .chat-main__message-list__message{
+    &__message{
       color: #434a54;
       font-size: 14px;
+      margin-bottom: 46px;
     }
   }
-  .chat-main__massage-form{
+  &__massage-form{
     height: 90px;
     width: calc(100vw - 300px);
     background-color: #d2d2d2;
@@ -86,6 +87,7 @@ $s:#ffffff;
       .message-text{
         line-height: 50px;
         width: 100%;
+        padding-left: 10px;
         position: absolute;
       }
       .input-box__image{
@@ -105,7 +107,7 @@ $s:#ffffff;
         height: 50px;
         width: 100px;
         background-color: rgb(59, 137, 189);
-        color: $s;
+        color: $main-color;
         line-height: 50px;
         text-align: center;
         margin-left: 15px;

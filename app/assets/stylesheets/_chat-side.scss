@@ -1,3 +1,4 @@
+$s:#ffffff;
 .side-ber {
   height: 100vh;
   width: 300px;
@@ -17,11 +18,11 @@
       justify-content: flex-start;
       .top-items{
         height: 20px;
-        width: calc(260px - 60px);
-        line-height: center;
-        color: #ffffff;
-        font-weight: bold;
+        width: 260px - 60px;
+        color: $s;
         font-size: 16px;
+        line-height: center;
+        font-weight: bold;
       }
       .top-items__icon{
         height: 20px;
@@ -29,10 +30,10 @@
         display: flex;
         justify-content: flex-end;
           .fa-edit{
-            color: #ffffff;
+            color: $s;
           }
           .fa-cog{
-            color: #ffffff;
+            color: $s;
             margin-left: 5px;
           }
       }
@@ -47,14 +48,14 @@
       width: 300px;
       .side-ber__group-list__item__name{
         font-size: 15px;
-        color: #ffffff;
+        color: $s;
         padding-top: 20px;
         margin-bottom: 5px;
         margin-left: 20px;
       }
       .side-ber__group-list__item__last-message{
         font-size: 11px;
-        color: #ffffff;
+        color: $s;
         margin-left: 20px;
       }
     }

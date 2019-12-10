@@ -1,0 +1,18 @@
+.side-ber
+  .side-ber__user-name
+    .top-items__name
+      .top-items
+        = current_user.name
+      .top-items__icon
+        =link_to new_group_path do
+          =icon("fas" ,"edit")
+        =link_to edit_user_path(current_user) do
+          =icon("fas" ,"cog")
+  .side-ber__group-list
+    - current_user.groups.each do |group|
+      .side-ber__group-list__item
+        = link_to edit_group_path(group) do
+          .side-ber__group-list__item__name
+            = group.name
+          .side-ber__group-list__item__last-message
+            -# = message_id

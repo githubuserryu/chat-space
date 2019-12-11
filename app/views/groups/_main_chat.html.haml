@@ -15,25 +15,12 @@
         2019/12/9
     .chat-main__message-list__message
       おはよう
-    .chat-main__message-list__user
-      .chat-main__message-list__user__name
-        まさ
-      .chat-main__message-list__user__time
-        2019/12/9
-    .chat-main__message-list__message
-      こんにちは
-    .chat-main__message-list__user
-      .chat-main__message-list__user__name
-        まさ
-      .chat-main__message-list__user__time
-        2019/12/9
-    .chat-main__message-list__message
-      こんばんは
-  .chat-main__massage-form
-    .massage-form__main
-      %input.message-text{type: "text", placeholder:"type a message",class: "message-font"}
-      %label{class:"input-box__image"}
-        =icon("far","image", class:"image-icon")
-        %input{type:"file", class:"image-input"}
-    %input.message-submit{type: "submit", value:"Send",class: "submit-btn"}
 
+  .chat-main__massage-form
+    = form_for [ @group, @message ] do |f|
+      = f.text_field :message, class: "form__message", placeholder: "type a message"
+      .massage-form__main
+        = f.label :image, class: "input-box__image" do
+          = icon("far", "image", class: "image-icon")
+          = f.file_field :image, class:"image-input"
+      = f.submit 'Send', class: "submit-btn"

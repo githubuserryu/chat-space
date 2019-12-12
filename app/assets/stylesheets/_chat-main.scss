@@ -1,15 +1,17 @@
 html,body{
   height: 100%;
+  width: 100%;
   padding: 0;
   margin: 0;
 }
 .chat-main{
   height: 100%;
+  width: 100%;
   padding: 0;
   margin: 0;
   &__group-info{
     height: 100px;
-    width: calc(100vw - 300px);
+    width: calc(100% - 300px);
     background-color: $main-color;
     float: right;
     display: flex;
@@ -43,10 +45,9 @@ html,body{
   }
   &__message-list{
     height: calc(100vh - 100px - 90px);
-    width: calc(100vw - 300px);
+    width: calc(100% - 300px);
     background-color: #fafafa;
-    padding-left: 40px;
-    padding-top: 35px;
+    padding: 46px 40px 0;
     float: right;
     &__user{
       display: flex;
@@ -69,48 +70,54 @@ html,body{
       margin-bottom: 46px;
     }
   }
-  &__massage-form{
-    height: 90px;
-    width: calc(100vw - 300px);
-    background-color: #d2d2d2;
-    float: right;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 40px;
-    .massage-form__main{
-      display: flex;
-      justify-content: space-between;
-      height: 50px;
-      width: 100%;
-      position: relative;
-      .message-text{
-        line-height: 50px;
-        width: 100%;
-        padding-left: 10px;
-        position: absolute;
-      }
-      .input-box__image{
-        .image-icon{
-          position: absolute;
-          right: 0px;
-          line-height: 50px;
-          margin-right: 10px;
-          font-size: 30px;
+  // &__massage-form{
+ 
+  //   .message-form__main{
+  //     height: 50px;
+  //     width: 100%;
+  //     position: relative;
+      .new_message{
+        height: 90px;
+        width: calc(100% - 300px);
+        background-color: #d2d2d2;
+        float: right;
+        align-items: center;
+        padding: 20px 50px 20px 40px;
+        display: flex;
+        justify-content: space-between; 
+        .input-box{
+          position: relative;
+          width: 100%;
+          .form__message{
+            height: 50px;
+            width: 100%;
+            float:left;
+            padding-right: 10px;
+          }
+          .input-box__label{
+            height: 50px;
+            line-height: 50px;
+            // width: 100%; <-戦犯
+            position: absolute;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+              .image-input{
+                display: none;
+              }
+          }
         }
-        .image-input{
-          display: none;
-        }
       }
-    }
       .submit-btn{
-        height: 50px;
-        width: 100px;
-        background-color: rgb(59, 137, 189);
+        background-color: $light_blue;
+        border: none;
         color: $main-color;
-        line-height: 50px;
-        text-align: center;
+        float: right;
+        font-size: 16px;
+        height: 50px;
         margin-left: 15px;
-      }
-    }
+        padding: 0 30px;
+        }
 }
+  // }
+// }

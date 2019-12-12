@@ -11,8 +11,8 @@
   .side-ber__group-list
     - current_user.groups.each do |group|
       .side-ber__group-list__item
-        = link_to edit_group_path(group) do
+        = link_to group_messages_path(group) do
           .side-ber__group-list__item__name
             = group.name
           .side-ber__group-list__item__last-message
-            -# = message_id
+            = group.show_last_message

@@ -71,26 +71,31 @@ $(function(){
   });
   var reloradMessage = function(){
     last_message_id = $(".chat-main__message-list__user:last").data("message-id");
-
+    group_id = $(".chat-main").data("group-id")
     $.ajax({
-      url: `groups/${group.id}/message`,
+      url: `/groups/${group_id}/api/messages`,
       type: "get",
-      data: {id: last_message_id},
       dataType: "json",
+      data: {id: last_message_id}
     })
     .done(function(message){
       //追加するHTMLの入れ物を作る
       var insertHTML = '';
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
-      $.each(messages, function(i, message) {
+      $.each(message, function(i, message) {
         insertHTML += buildHTML(message)
       });
       //メッセージが入ったHTMLに、入れ物ごと追加
-      $('.messages').append(insertHTML);
-      console.log("success");
+      $('.chat-main__message-list').append(insertHTML);
+      $('.chat-main__message-list').animate({scrollTop: $('.chat-main__message-list')[0].scrollHeight},'fast');
     })
     .fail(function(){
-      allert("エラー");
+      alert("エラー");
     })
+  }
+
+  $(function(){});
+  if (document.location.href.match(/\/groups\/\d+\/messages/)){
+    setInterval(reloradMessage,3000);
   }
 });

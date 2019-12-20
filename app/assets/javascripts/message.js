@@ -96,6 +96,6 @@ $(function(){
 
   $(function(){});
   if (document.location.href.match(/\/groups\/\d+\/messages/)){
-    setInterval(reloradMessage,3000);
+    setInterval(reloradMessage,7000);
   }
 });

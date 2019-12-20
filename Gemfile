@@ -68,3 +68,7 @@ end
 group :test, :development do
   gem 'capybara'
 end
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end

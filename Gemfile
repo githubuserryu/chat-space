@@ -59,6 +59,7 @@ gem "rspec-rails"
 gem "factory_bot_rails"
 gem "rails-controller-testing"
 gem "faker"
+gem 'fog-aws'
 
 
 group :development do
@@ -78,4 +79,3 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
-gem 'fog-aws'

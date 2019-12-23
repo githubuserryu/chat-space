@@ -61,6 +61,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.chat-main__message-list').append(html);
+      $('.chat-main__message-list').animate({scrollTop: $('.chat-main__message-list')[0].scrollHeight},'fast');
       $('form')[0].reset();
     })
     .fail(function(){
@@ -86,7 +87,6 @@ $(function(){
       });
       //メッセージが入ったHTMLに、入れ物ごと追加
       $('.chat-main__message-list').append(insertHTML);
-      $('.chat-main__message-list').animate({scrollTop: $('.chat-main__message-list')[0].scrollHeight},'fast');
     })
     .fail(function(){
       alert("エラー");

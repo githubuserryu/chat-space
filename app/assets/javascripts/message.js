@@ -32,6 +32,7 @@ $(function(){
                   ${message.message}
                 </p>
               </div>`
+              return html;
         }else if(message.image){
           var html = 
           `<div class = "chat-main__message-list__user"  data-message-id = ${message.id}>
@@ -83,6 +84,7 @@ $(function(){
       var insertHTML = '';
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
       $.each(message, function(i, message) {
+        console.log(message)
         insertHTML += buildHTML(message)
       });
       //メッセージが入ったHTMLに、入れ物ごと追加

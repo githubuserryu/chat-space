@@ -86,6 +86,7 @@ $(function(){
       $.each(message, function(i, message) {
         console.log(message)
         insertHTML += buildHTML(message)
+        $('.chat-main__message-list').animate({scrollTop: $('.chat-main__message-list')[0].scrollHeight},'fast');
       });
       //メッセージが入ったHTMLに、入れ物ごと追加
       $('.chat-main__message-list').append(insertHTML);

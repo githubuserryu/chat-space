@@ -2,7 +2,7 @@
   .chat-main__message-list__user__name
     = message.user.name
   .chat-main__message-list__user__time
-    = message.created_at.strftime("%Y/%m/%d %H:%M")
+    = message.created_at.strftime("%Y年%-m月%-d日 %-H時%-M分%")
 
 .chat-main__message-list__message
   - if message.message.present?
